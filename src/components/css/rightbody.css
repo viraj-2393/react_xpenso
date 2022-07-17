@@ -1,13 +1,17 @@
 .right_body{
     display: flex;
     flex-direction: column;
+    width: 90%;
+    padding: 20px;
 }
 .charts {
     display: flex;
 }
 .chart1{
     width: 50%;
+    padding: 20px;
 }
 .chart2{
     width: 50%;
+    padding: 20px;
 }

@@ -35,16 +35,16 @@ class ExpenseChart extends Component {
 			axisY: {
 				title: "Units Sold",
 				titleFontColor: "#6D78AD",
-				lineColor: "#6D78AD",
+				lineColor: "red",
 				labelFontColor: "#6D78AD",
-				tickColor: "#6D78AD"
+				tickColor: "#3547AC"
 			},
 			axisY2: {
 				title: "Profit in USD",
 				titleFontColor: "#51CDA0",
-				lineColor: "#51CDA0",
+				lineColor: "#F0582E",
 				labelFontColor: "#51CDA0",
-				tickColor: "#51CDA0"
+				tickColor: "#F0582E"
 			},
 			toolTip: {
 				shared: true

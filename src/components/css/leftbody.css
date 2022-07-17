@@ -1,0 +1,6 @@
+.left_body{
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

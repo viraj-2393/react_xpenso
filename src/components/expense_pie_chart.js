@@ -8,7 +8,7 @@ class ExpensePieChart extends Component {
 		const options = {
 			animationEnabled: true,
 			exportEnabled: true,
-			theme: "dark2", // "light1", "dark1", "dark2"
+			theme: "light1", // "light1", "dark1", "dark2"
 			title:{
 				text: "Trip Expenses"
 			},
