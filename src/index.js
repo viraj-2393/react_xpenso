@@ -2,6 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './navmenu.css';
 import './profile_pic.jpg';
+import ExpenseChart from './expense_chart.js';
+function RightBody(){
+  return (
+    <>
+      <div className="right_body">
+          <NavMenu/>
+          <ExpenseChart/>
+      </div>
+    </>
+  );
+}
 function NavMenu(){
   return (
     <>
@@ -23,8 +34,11 @@ function NavMenu(){
   );
 }
 
+
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <NavMenu/>
+    <RightBody/>
 );
 
