@@ -1,17 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import './navmenu.css';
+import './profile_pic.jpg';
+function NavMenu(){
+  return (
+    <>
+      <div className='nav_container'>
+        <div className='nav_left'>
+          <h1>Overview</h1>
+          <p>Hey Viraj, Get your monthly transaction history here!</p>
+        </div>
+        <div className='nav_right'>
+          <span class="material-icons">markunread</span>
+          <span class="material-icons">circle_notifications</span>
+          <div>
+            <img src={require('./profile_pic.jpg')}></img>
+          </div>
+          
+        </div>
+      </div>
+    </>
+  );
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <NavMenu/>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

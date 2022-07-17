@@ -1,0 +1,33 @@
+body{
+    font-family: 'Courier New', Courier, monospace;
+}
+#root{
+    padding: 10px;
+}
+.nav_container{
+    display: flex;
+    justify-content: space-between;
+}
+.nav_left {
+    margin: 0;
+}
+.nav_left>h1 {
+    margin: 0;
+}
+.nav_right{
+    display: flex;
+    justify-content: space-between;
+    width: 10%;
+    align-items: center;
+
+}
+
+.nav_right>div>img{
+    width:50px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.nav_right span{
+    color: #96A0B6;
+}
