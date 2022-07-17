@@ -19,6 +19,34 @@ function BudgetAndTransactionStrip(props){
       </>
     );
   }
+
+  function TransactionStrip() {
+    return (
+      <>
+        <div className='transaction_strip'>
+          <div className='transaction_left_content'>
+            <div className='transaction_category_icon'>
+              <span class="material-icons">local_cafe</span>
+            </div>
+            <div className='transaction_title_subtitle'>
+              <h3>Restaurants & Cafe</h3>
+              <p>12 JULY 2022</p>
+            </div>
+          </div>
+
+          <div className='transaction_right_content'>
+            <div className='transaction_amount'>
+              <h3>$300</h3>
+            </div>
+            <div className='remove_transaction'>
+            <span class='material-icons'>close</span>
+            </div>
+          </div>
+          
+        </div>
+      </>
+    );
+  }
   
   function BudgetAndTransaction(props){
     return (
@@ -37,7 +65,14 @@ function BudgetAndTransactionStrip(props){
              
           </div>
           <div className='transaction'>
-  
+            <div className="budget_header">
+              <h3>Transaction History</h3>
+              <span class="material-icons">hdr_strong</span>
+             </div>
+             <TransactionStrip/>
+             <TransactionStrip/>
+             <TransactionStrip/>
+             <TransactionStrip/>
           </div>
                
         </div>
