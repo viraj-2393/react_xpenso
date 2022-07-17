@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CanvasJSReact from './assets/lib/canvasjs.react';
+import CanvasJSReact from '../assets/lib/canvasjs.react';
 var CanvasJS = CanvasJSReact.CanvasJS;
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
  
@@ -24,7 +24,7 @@ class ExpenseChart extends Component {
 			theme: "light2",
 			animationEnabled: true,
 			title:{
-				text: "Units Sold VS Profit"
+				text: "Expenses Data Sheet"
 			},
 			subtitles: [{
 				text: "Click Legend to Hide or Unhide Data Series"
@@ -83,7 +83,7 @@ class ExpenseChart extends Component {
 				yValueFormatString: "$#,##0.#",
 				dataPoints: [
 					{ x: new Date(2017, 0, 1), y: 19034.5 },
-					{ x: new Date(2017, 1, 1), y: 20015 },
+					{ x: new Date(2017, 1, 1), y: 0 },
 					{ x: new Date(2017, 2, 1), y: 27342 },
 					{ x: new Date(2017, 3, 1), y: 20088 },
 					{ x: new Date(2017, 4, 1), y: 20234 },
