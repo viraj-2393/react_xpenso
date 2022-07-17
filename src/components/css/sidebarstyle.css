@@ -1,0 +1,26 @@
+.sidebaritem{
+    width: 20%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 10px;
+    transition: .3s ease-out;
+  }
+  .sidebaritem:hover{
+      background-color: #3547AC;
+      color: white;
+  }
+  .sidebaritem span:hover{
+      color: white;
+  }
+  .sidebaritem span{
+      color: gray;
+  }
+  .active_side_menu{
+      background-color: #3547AC;
+  }
+  .active_side_menu span{
+      color: #ffffff;
+  }
