@@ -33,7 +33,7 @@ function BudgetAndTransactionStrip(props){
       props.setTransaction(newArr);
     }
 
-   if(props.transaction[props.index].isVisible) return (
+    if(props.transaction[props.index].isVisible) return (
       <>
         <div className='transaction_strip'>
           <div className='transaction_left_content'>
@@ -58,6 +58,8 @@ function BudgetAndTransactionStrip(props){
         </div>
       </>
     );
+  
+   
   }
   
   function BudgetAndTransaction(props){
@@ -69,6 +71,13 @@ function BudgetAndTransactionStrip(props){
     ]
 
     const [txData,setTxData] = React.useState(transactionData);
+
+    function addTransaction(){
+      let copy = [...txData];
+      copy.push({id:"5", title: 'Others', date: Date().toString(), amount: '60', isVisible: true});
+      setTxData(copy);
+
+    }
 
     return (
       <>
@@ -88,12 +97,13 @@ function BudgetAndTransactionStrip(props){
           <div className='transaction'>
             <div className="budget_header">
               <h3>Transaction History</h3>
-              <span class="material-icons">hdr_strong</span>
+              {/* <span class="material-icons">hdr_strong</span> */}
+              <button type='button' onClick={addTransaction}>+</button>
              </div>
 
-             {transactionData.map((transaction,index) => 
+             {txData.map((transaction,index) => 
               <TransactionStrip index={index} transaction={txData} setTransaction={setTxData} /> 
-             )}
+              )}
              
            
           </div>
