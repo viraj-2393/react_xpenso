@@ -1,4 +1,5 @@
 import './css/budget.css';
+import React from 'react';
 function BudgetAndTransactionStrip(props){
     return (
       <>
@@ -20,8 +21,19 @@ function BudgetAndTransactionStrip(props){
     );
   }
 
-  function TransactionStrip() {
-    return (
+  function TransactionStrip(props) {
+    function deleteThisStrip(){
+      const newArr = props.transaction.map((obj,index) => {
+        if (index === props.index) {
+          return {...obj, isVisible: false};
+        }
+      
+        return obj;
+      });
+      props.setTransaction(newArr);
+    }
+
+    if(props.transaction[props.index].isVisible) return (
       <>
         <div className='transaction_strip'>
           <div className='transaction_left_content'>
@@ -29,16 +41,16 @@ function BudgetAndTransactionStrip(props){
               <span class="material-icons">local_cafe</span>
             </div>
             <div className='transaction_title_subtitle'>
-              <h3>Restaurants & Cafe</h3>
-              <p>12 JULY 2022</p>
+              <h3>{props.transaction[props.index].title}</h3>
+              <p>{props.transaction[props.index].date}</p>
             </div>
           </div>
 
           <div className='transaction_right_content'>
             <div className='transaction_amount'>
-              <h3>$300</h3>
+              <h3>${props.transaction[props.index].amount}</h3>
             </div>
-            <div className='remove_transaction'>
+            <div className='remove_transaction' onClick = {() => deleteThisStrip()}>
             <span class='material-icons'>close</span>
             </div>
           </div>
@@ -46,9 +58,27 @@ function BudgetAndTransactionStrip(props){
         </div>
       </>
     );
+  
+   
   }
   
   function BudgetAndTransaction(props){
+    const transactionData = [
+      {id:"1", title: 'Restaurants & Cafe', date: Date().toString(), amount: '400', isVisible: true},
+      {id:"2", title: 'Travelling', date: Date().toString(), amount: '200', isVisible: true},
+      {id:"3", title: 'Education', date: Date().toString(), amount: '300', isVisible: true},
+      {id:"4", title: 'Entertainment', date: Date().toString(), amount: '600', isVisible: true}
+    ]
+
+    const [txData,setTxData] = React.useState(transactionData);
+
+    function addTransaction(){
+      let copy = [...txData];
+      copy.push({id:"5", title: 'Others', date: Date().toString(), amount: '60', isVisible: true});
+      setTxData(copy);
+
+    }
+
     return (
       <>
         <div className="budgetandtransaction">
@@ -67,12 +97,15 @@ function BudgetAndTransactionStrip(props){
           <div className='transaction'>
             <div className="budget_header">
               <h3>Transaction History</h3>
-              <span class="material-icons">hdr_strong</span>
+              {/* <span class="material-icons">hdr_strong</span> */}
+              <button type='button' onClick={addTransaction}>+</button>
              </div>
-             <TransactionStrip/>
-             <TransactionStrip/>
-             <TransactionStrip/>
-             <TransactionStrip/>
+
+             {txData.map((transaction,index) => 
+              <TransactionStrip index={index} transaction={txData} setTransaction={setTxData} /> 
+              )}
+             
+           
           </div>
                
         </div>
