@@ -4,26 +4,23 @@ var CanvasJS = CanvasJSReact.CanvasJS;
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
  
 class ExpensePieChart extends Component {	
+	constructor(props){
+		super(props);
+		this.pdp = props.pieDataPoints;
+	}
 	render() {
 		const options = {
 			animationEnabled: true,
 			exportEnabled: true,
 			theme: "light1", // "light1", "dark1", "dark2"
 			title:{
-				text: "Trip Expenses"
+				text: "Monthly Budget"
 			},
 			data: [{
 				type: "pie",
 				indexLabel: "{label}: {y}%",		
 				startAngle: -90,
-				dataPoints: [
-					{ y: 20, label: "Airfare" },
-					{ y: 24, label: "Food & Drinks" },
-					{ y: 20, label: "Accomodation" },
-					{ y: 14, label: "Transportation" },
-					{ y: 12, label: "Activities" },
-					{ y: 10, label: "Misc" }	
-				]
+				dataPoints: this.pdp
 			}]
 		}
 		
