@@ -6,7 +6,8 @@ var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 class ExpenseChart extends Component {	
 	constructor(props) {
 		super(props);
-		this.pdp1 = props.chartDataPoint1;
+		this.props = props;
+		this.pdp1 = props.chartDataPoint;
 		this.pdp2 = props.chartDataPoint2;
 		this.toggleDataSeries = this.toggleDataSeries.bind(this);
 	}
@@ -41,13 +42,13 @@ class ExpenseChart extends Component {
 				labelFontColor: "#6D78AD",
 				tickColor: "#3547AC"
 			},
-			axisY2: {
-				title: "Money Added $",
-				titleFontColor: "#51CDA0",
-				lineColor: "#F0582E",
-				labelFontColor: "#51CDA0",
-				tickColor: "#F0582E"
-			},
+			// axisY2: {
+			// 	title: "Money Added $",
+			// 	titleFontColor: "#51CDA0",
+			// 	lineColor: "#F0582E",
+			// 	labelFontColor: "#51CDA0",
+			// 	tickColor: "#F0582E"
+			// },
 			toolTip: {
 				shared: true
 			},
@@ -61,17 +62,18 @@ class ExpenseChart extends Component {
 				showInLegend: true,
 				xValueFormatString: "MMM YYYY",
 				yValueFormatString: "$#,##0.#",
-				dataPoints: this.pdp1
+				dataPoints: this.props.chartDataPoint
 			},
-			{
-				type: "spline",
-				name: "Money Added $",
-				axisYType: "secondary",
-				showInLegend: true,
-				xValueFormatString: "MMM YYYY",
-				yValueFormatString: "$#,##0.#",
-				dataPoints: this.pdp2
-			}]
+			// {
+			// 	type: "spline",
+			// 	name: "Money Added $",
+			// 	axisYType: "secondary",
+			// 	showInLegend: true,
+			// 	xValueFormatString: "MMM YYYY",
+			// 	yValueFormatString: "$#,##0.#",
+			// 	dataPoints: this.pdp2
+			// }
+		]
 		}
 		
 		
