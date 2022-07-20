@@ -19,6 +19,7 @@ function Body(){
     {id:3, title: 'Education', date: Date().toString(), amount: '300', isVisible: true},
     {id:5, title: 'Entertainment', date: Date().toString(), amount: '600', isVisible: true}
   ]
+  const [txData,setTxData] = React.useState(transactionData);
   const pieDataPoints = [
     { y: 20, label: "Education" },
     { y: 25, label: "Grocery" },
@@ -28,42 +29,17 @@ function Body(){
     { y: 25, label: "Others" }	
   ];
 
-  const chartDataPoint1 = [
-    { x: new Date(2022, 0, 1), y: 120 },
-    { x: new Date(2022, 1, 1), y: 135 },
-    { x: new Date(2022, 2, 1), y: 144 },
-    { x: new Date(2022, 3, 1), y: 103 },
-    { x: new Date(2022, 4, 1), y: 93 },
-    { x: new Date(2022, 5, 1), y: 129 },
-    { x: new Date(2022, 6, 1), y: 143 },
-    { x: new Date(2022, 7, 1), y: 156 },
-    { x: new Date(2022, 8, 1), y: 122 },
-    { x: new Date(2022, 9, 1), y: 106 },
-    { x: new Date(2022, 10, 1), y: 137 },
-    { x: new Date(2022, 11, 1), y: 142 }
-  ];
+  const chartDataPoint1 = [];
+  txData.map((data,index) => chartDataPoint1.push({x: new Date(2022,index,1), y: Number(data.amount)}));
 
-  const chartDataPoint2  = [
-    { x: new Date(2022, 0, 1), y: 110 },
-    { x: new Date(2022, 1, 1), y: 0 },
-    { x: new Date(2022, 2, 1), y: 95 },
-    { x: new Date(2022, 3, 1), y: 138 },
-    { x: new Date(2022, 4, 1), y: 325 },
-    { x: new Date(2022, 5, 1), y: 400 },
-    { x: new Date(2022, 6, 1), y: 0 },
-    { x: new Date(2022, 7, 1), y: 0 },
-    { x: new Date(2022, 8, 1), y: 50 },
-    { x: new Date(2022, 9, 1), y: 65 },
-    { x: new Date(2022, 10, 1), y: 73 },
-    { x: new Date(2022, 11, 1), y: 300 }
-  ];
+  const [chartDataPoint,setChartDataPoint] = useState(chartDataPoint1);
 
-  const [txData,setTxData] = React.useState(transactionData);
- 
+  const chartDataPoint2  = [];
+  
   return (
     <>
       <div className="holder">
-        {txform  ? <TransactionForm isVisible={txform} setVisibility={setTxForm} txData={txData} setTxData={setTxData}/>:null}
+        {txform  ? <TransactionForm isVisible={txform} setVisibility={setTxForm} txData={txData} setTxData={setTxData} chartDataPoint={chartDataPoint} setChartDataPoint={setChartDataPoint}/>:null}
         
         <div className='left_body'>
           <SideBar/>
@@ -71,7 +47,7 @@ function Body(){
 
         <div className="right_body">
           <NavMenu/>
-          <Chart pieDataPoints={pieDataPoints} chartDataPoint1={chartDataPoint1} chartDataPoint2={chartDataPoint2}/>
+          <Chart pieDataPoints={pieDataPoints} chartDataPoint={chartDataPoint} chartDataPoint2={chartDataPoint2}/>
           <BudgetAndTransaction isVisible={txform} setVisibility={setTxForm} txData={txData} setTxData={setTxData}/>          
         </div>
 

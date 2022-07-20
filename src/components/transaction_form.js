@@ -19,6 +19,11 @@ function TransactionForm (props){
           let copy = [...props.txData];
           copy.push({id:copy.length+1, title: title, date: date, amount: amount, isVisible: true});
           props.setTxData(copy);
+
+          let chartDataPoint_copy = [...props.chartDataPoint];
+          chartDataPoint_copy.push({x: new Date(2022,chartDataPoint_copy.length,1), y: Number(amount)});
+          props.setChartDataPoint(chartDataPoint_copy);
+
     }
 
     let [title,setTitle] = useState('');
