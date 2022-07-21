@@ -92,9 +92,12 @@ function BudgetAndTransactionStrip(props){
               <button type='button' onClick={displayAddTransactionForm}>+</button>
              </div>
 
-             {props.txData.map((transaction,index) => 
+              <div className='transaction_strip_container'>
+              {props.txData.map((transaction,index) => 
               <TransactionStrip index={index} transaction={props.txData} setTransaction={props.setTxData} /> 
               )}
+              </div>
+             
              
            
           </div>

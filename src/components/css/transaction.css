@@ -39,6 +39,26 @@
     margin-top: 10px;
 
 }
+
+.add_transaction_header>button{
+    display: flex;
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+    background-color: #FADADC;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    cursor: pointer;
+    color: #D10D15;
+    border: 1px solid gray;
+    
+}
+.add_transaction_header>button{
+    
+}
+
 .add_transaction_body input{
     width: 100%;
     height: 50px;
@@ -47,5 +67,27 @@
     margin-top: 10px;
     margin-right: 20px;
     padding: 10px;
+
+}
+.add_transaction_body input[type="submit"]{
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-right: 20px;
+    padding: 10px;
+    background-color: #CFEEFF;
+    color: gray;
+    border: none;
+    height: 40px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    transition: .3s ease-out;
+}
+
+.add_transaction_body input[type="submit"]:hover {
+    background-color: #1D88EC;
+    color: #ffffff;
 }
 
