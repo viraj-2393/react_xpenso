@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import NavMenu  from './components/navmenu.js';
 import Chart from './components/chart.js';

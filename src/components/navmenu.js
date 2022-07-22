@@ -11,7 +11,7 @@ function NavMenu(){
             <span class="material-icons">markunread</span>
             <span class="material-icons">circle_notifications</span>
             <div>
-              <img src={require('.././assets/images/profile_pic.jpg')}></img>
+              <img src={require('.././assets/images/profile_pic.jpg')} alt="proile pic"></img>
             </div>
             
           </div>

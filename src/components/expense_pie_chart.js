@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import CanvasJSReact from '../assets/lib/canvasjs.react';
-var CanvasJS = CanvasJSReact.CanvasJS;
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
  
 class ExpensePieChart extends Component {	
