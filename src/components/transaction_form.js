@@ -16,6 +16,10 @@ function TransactionForm (props){
     }
 
     const addTransaction = () => {
+          if(amount === '' || isNaN(amount)){
+            alert('Please enter a valid number.');
+            return;
+          }
           let copy = [...props.txData];
           copy.push({id:copy.length+1, title: title, date: date, amount: amount, isVisible: true});
           props.setTxData(copy);
@@ -26,9 +30,11 @@ function TransactionForm (props){
 
     }
 
-    let [title,setTitle] = useState('');
+    let [title,setTitle] = useState('Entertainment');
     let [amount,setAmount] = useState('');
     let date = Date().toString();
+
+
 
     return (
      <>
